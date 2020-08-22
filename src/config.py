@@ -12,7 +12,7 @@ MYSQL_CONNENT = {
         'ENV_MYSQL_DATABASE') != None else "pcr",
     'host': os.getenv('ENV_MYSQL_HOST') if os.getenv(
         'ENV_MYSQL_HOST') != None else '127.0.0.1',
-    'port': os.getenv('ENV_MYSQL_PORT') if os.getenv(
+    'port': int(os.getenv('ENV_MYSQL_PORT')) if os.getenv(
         'ENV_MYSQL_PORT') != None else 3306,
     'user': os.getenv('ENV_MYSQL_USER') if os.getenv(
         'ENV_MYSQL_USER') != None else 'root',
