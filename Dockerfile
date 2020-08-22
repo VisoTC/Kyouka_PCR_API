@@ -1,0 +1,16 @@
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
+
+ENV ENV_REDIS_HOST=127.0.0.1
+ENV ENV_REDIS_PORT=6379
+ENV ENV_REDIS_DB=0
+
+ENV ENV_MYSQL_DATABASE=pcr
+ENV ENV_MYSQL_HOST="127.0.0.1"
+ENV ENV_MYSQL_PORT=3306
+ENV ENV_MYSQL_USER=root
+ENV ENV_MYSQL_PASSWD=root
+
+EXPOSE $ENV_HTTP_PORT
+
+COPY ./src /app
+RUN pip install -r /app/requirements.txt
